@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2229097243F2A3A00A52806 /* ReverseList.m in Sources */ = {isa = PBXBuildFile; fileRef = A2229096243F2A3A00A52806 /* ReverseList.m */; };
 		A27C2158243C218B007444F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A27C2157243C218B007444F4 /* AppDelegate.m */; };
 		A27C215B243C218B007444F4 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A27C215A243C218B007444F4 /* SceneDelegate.m */; };
 		A27C215E243C218B007444F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A27C215D243C218B007444F4 /* ViewController.m */; };
@@ -62,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A2229095243F2A3A00A52806 /* ReverseList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReverseList.h; sourceTree = "<group>"; };
+		A2229096243F2A3A00A52806 /* ReverseList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReverseList.m; sourceTree = "<group>"; };
 		A27C2153243C218A007444F4 /* 0.题2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "0.题2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A27C2156243C218B007444F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A27C2157243C218B007444F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 				A27C215A243C218B007444F4 /* SceneDelegate.m */,
 				A27C215C243C218B007444F4 /* ViewController.h */,
 				A27C215D243C218B007444F4 /* ViewController.m */,
+				A2229095243F2A3A00A52806 /* ReverseList.h */,
+				A2229096243F2A3A00A52806 /* ReverseList.m */,
 				A27C21BA243C2C1E007444F4 /* NextViewController.h */,
 				A27C21BB243C2C1E007444F4 /* NextViewController.m */,
 				A27C21BD243C2CA4007444F4 /* CustomTableViewCell.h */,
@@ -466,6 +471,7 @@
 				A27C21A9243C245D007444F4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				A27C21AD243C245D007444F4 /* MASLayoutConstraint.m in Sources */,
 				A2AED468243DBBB400F9A9BB /* NSObject+MJClass.m in Sources */,
+				A2229097243F2A3A00A52806 /* ReverseList.m in Sources */,
 				A27C215B243C218B007444F4 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

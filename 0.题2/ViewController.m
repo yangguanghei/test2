@@ -14,6 +14,7 @@
 #import "MJExtension.h"
 
 #import "NextViewController.h"
+#import "ReverseList.h"
 
 @interface ViewController ()
 
@@ -49,14 +50,42 @@
     
 //    [self deadLoop];
     
-    [self jsonStringToDict];
+//    [self jsonStringToDict];
     
 //    [self testBadAccess];
+    
+//    [self charReverse];
+    
+    [self testReverseList];
+}
+
+// 反转链表
+- (void)testReverseList{
+    struct Node * head = constructList();
+    printList(head);
+    NSLog(@"反转之后的链表");
+    struct Node * newHead = reverseList(head);
+    printList(newHead);
+}
+
+// 字符传反转
+- (void)charReverse{
+    char ch[] = "hello,world!";
+    char * begin = ch;
+    char * end = ch + strlen(ch) - 1;
+    while (begin < end) {
+        char temp = *begin;
+        *begin = *end;
+        *end = temp;
+        begin ++;
+        end --;
+    }
+    printf("反转后的字符串：%s", ch);
 }
 
 // JSON字符串转字典
 - (void)jsonStringToDict{
-    NSString * str = @"{\"old\":\"🙂   \"8:&:   🙂\", \"new\":\"🙂   2    🙂\"}";
+    NSString * str = @"{\"old\":\"1   ///8:&:   1\", \"new\":\"2   2    2\"}";
     
     NSLog(@"str:%@", str);
     
@@ -67,14 +96,12 @@
     NSRange firstRange = [str rangeOfString:firstStr];
     NSRange secondRange = [str rangeOfString:secondStr];
     NSRange thirdRange = [str rangeOfString:thirdStr];
+        
     
-    NSRange range2 = [[str substringFromIndex:firstRange.location + firstRange.length] rangeOfString:secondStr];
-    
-    
-    NSString * content1 =
-    NSString * content2 = [[str substringWithRange:NSMakeRange(secondRange.location, <#NSUInteger len#>);
-    NSLog(@"%@", content1);
-    NSLog(@"%@", content2);
+    NSString * content1 = [str substringWithRange:NSMakeRange(firstRange.location + firstRange.length, secondRange.location-firstRange.location-firstRange.length)];
+    NSString * content2 = [str substringWithRange:NSMakeRange(secondRange.location + secondRange.length, thirdRange.location-secondRange.location-secondRange.length)];
+    NSLog(@"content1:%@", content1);
+    NSLog(@"content2:%@", content2);
     
     NSString * newContent1 = [self JSONString:content1];
     NSString * newContent2 = [self JSONString:content2];
@@ -82,7 +109,7 @@
     NSMutableString * mutableStr = [NSMutableString stringWithString:firstStr];
     [mutableStr appendString:newContent1];
     [mutableStr appendString:secondStr];
-    [mutableStr appendString:content2];
+    [mutableStr appendString:newContent2];
     [mutableStr appendString:thirdStr];
     
     
@@ -101,14 +128,15 @@
 
 -(NSString *)JSONString:(NSString *)aString {
     NSMutableString *s = [NSMutableString stringWithString:aString];
-    [s replaceOccurrencesOfString:@"\"" withString:@"\\\"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
-    [s replaceOccurrencesOfString:@"/" withString:@"\\/" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
-    [s replaceOccurrencesOfString:@"\n" withString:@"\\n" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
-    [s replaceOccurrencesOfString:@"\b" withString:@"\\b" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
-    [s replaceOccurrencesOfString:@"\f" withString:@"\\f" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
-    [s replaceOccurrencesOfString:@"\r" withString:@"\\r" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
-    [s replaceOccurrencesOfString:@"\t" withString:@"\\t" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
-    return [NSString stringWithString:s];
+//        [s replaceOccurrencesOfString:@"\"" withString:@"\\\"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
+//        [s replaceOccurrencesOfString:@"/" withString:@"\\/" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
+//        [s replaceOccurrencesOfString:@"\n" withString:@"\\n" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
+//        [s replaceOccurrencesOfString:@"\b" withString:@"\\b" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
+//        [s replaceOccurrencesOfString:@"\f" withString:@"\\f" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
+//        [s replaceOccurrencesOfString:@"\r" withString:@"\\r" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
+//        [s replaceOccurrencesOfString:@"\t" withString:@"\\t" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
+        [s replaceOccurrencesOfString:@"\\" withString:@"\\\\" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [s length])];
+        return [NSString stringWithString:s];
 }
 
 // 死循环
