@@ -16,10 +16,15 @@
 #import "NextViewController.h"
 #import "ReverseList.h"
 
+#import "TestViewModel.h"
+
 @interface ViewController ()
 
 @property (strong) NSObject * name;
 @property (nonatomic, strong) LayoutsubviewsView * view;
+/// 用于测试viewModel的ViewModel
+@property (nonatomic, strong) TestViewModel *  viewModel;
+
 
 @end
 
@@ -31,7 +36,9 @@
     
     self.view.backgroundColor = [UIColor greenColor];
     
-    [self testLayoutsubviews];
+//    [self testLayoutsubviews];
+    
+    [self viewModel];
 }
 
 // 测试layoutsubviews方法
@@ -56,7 +63,20 @@
     
 //    [self charReverse];
     
-    [self testReverseList];
+//    [self testReverseList];
+    
+    [self testViewModel];
+}
+
+// 测试ViewModel
+- (void)testViewModel{
+    [self.viewModel changeData];
+}
+- (TestViewModel *)viewModel{
+    if (_viewModel == nil) {
+        _viewModel = [[TestViewModel alloc] initWithController:self];
+    }
+    return _viewModel;
 }
 
 // 反转链表
