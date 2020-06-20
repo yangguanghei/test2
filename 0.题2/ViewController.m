@@ -53,7 +53,7 @@
     self.view = view;
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    [self presentNextVC];
+    [self presentNextVC];
     
 //    [self deadLoop];
     
@@ -65,7 +65,7 @@
     
 //    [self testReverseList];
     
-    [self testViewModel];
+//    [self testViewModel];
 }
 
 // 测试ViewModel

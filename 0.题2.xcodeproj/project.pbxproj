@@ -46,6 +46,8 @@
 		C11ECD4224431F92007D0B74 /* TestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C11ECD3F24431F92007D0B74 /* TestViewModel.m */; };
 		C11ECD4324431F92007D0B74 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C11ECD4024431F92007D0B74 /* TestModel.m */; };
 		C11ECD4424431F92007D0B74 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = C11ECD4124431F92007D0B74 /* TestView.m */; };
+		C1B042782450837F00ABC178 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B042762450837F00ABC178 /* ThirdViewController.m */; };
+		C1B042792450837F00ABC178 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1B042772450837F00ABC178 /* ThirdViewController.xib */; };
 		C4DE4DA017FC80F324B52C0E /* libPods-0.题2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DC4285B4B5322EFDB6D42E /* libPods-0.题2.a */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +153,9 @@
 		C11ECD3F24431F92007D0B74 /* TestViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewModel.m; sourceTree = "<group>"; };
 		C11ECD4024431F92007D0B74 /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
 		C11ECD4124431F92007D0B74 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+		C1B042752450837F00ABC178 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		C1B042762450837F00ABC178 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		C1B042772450837F00ABC178 /* ThirdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
 		F491C44A4F824AD2255447ED /* Pods-0.题2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0.题2.debug.xcconfig"; path = "Target Support Files/Pods-0.题2/Pods-0.题2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +234,9 @@
 				A2229096243F2A3A00A52806 /* ReverseList.m */,
 				A27C21BA243C2C1E007444F4 /* NextViewController.h */,
 				A27C21BB243C2C1E007444F4 /* NextViewController.m */,
+				C1B042752450837F00ABC178 /* ThirdViewController.h */,
+				C1B042762450837F00ABC178 /* ThirdViewController.m */,
+				C1B042772450837F00ABC178 /* ThirdViewController.xib */,
 				A27C21BD243C2CA4007444F4 /* CustomTableViewCell.h */,
 				A27C21BE243C2CA4007444F4 /* CustomTableViewCell.m */,
 				A27C21B4243C255B007444F4 /* LayoutsubviewsView.h */,
@@ -465,6 +473,7 @@
 			files = (
 				A27C2166243C219D007444F4 /* LaunchScreen.storyboard in Resources */,
 				A27C2163243C219D007444F4 /* Assets.xcassets in Resources */,
+				C1B042792450837F00ABC178 /* ThirdViewController.xib in Resources */,
 				A27C21B3243C245D007444F4 /* README.md in Resources */,
 				A27C21A8243C245D007444F4 /* LICENSE in Resources */,
 				A27C2161243C218B007444F4 /* Main.storyboard in Resources */,
@@ -522,6 +531,7 @@
 				A27C215E243C218B007444F4 /* ViewController.m in Sources */,
 				A27C2158243C218B007444F4 /* AppDelegate.m in Sources */,
 				A2AED46A243DBBB400F9A9BB /* MJPropertyKey.m in Sources */,
+				C1B042782450837F00ABC178 /* ThirdViewController.m in Sources */,
 				A27C21B6243C255B007444F4 /* LayoutsubviewsView.m in Sources */,
 				C11ECD4424431F92007D0B74 /* TestView.m in Sources */,
 				A27C21AE243C245D007444F4 /* NSArray+MASAdditions.m in Sources */,
