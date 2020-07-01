@@ -17,6 +17,8 @@
 #import "ReverseList.h"
 
 #import "TestViewModel.h"
+#import "CustomButton.h"
+#import "CustomView.h"
 
 @interface ViewController ()
 
@@ -25,20 +27,63 @@
 /// 用于测试viewModel的ViewModel
 @property (nonatomic, strong) TestViewModel *  viewModel;
 
+@property (nonatomic, copy) NSString * string;
 
 @end
 
 @implementation ViewController
+
+//- (void)setString:(NSString *)string{
+//    if (_string != string) {
+//        [_string release];
+//        _string = [string copy];
+//    }
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor greenColor];
-    
 //    [self testLayoutsubviews];
     
     [self viewModel];
+    
+    // 测试响应链
+    CustomButton * btn = [CustomButton buttonWithType:UIButtonTypeSystem];
+//    [self.view addSubview:btn];
+    btn.backgroundColor = [UIColor redColor];
+    btn.frame = CGRectMake(0, 0, 50, 50);
+    [btn setTitle:@"点我" forState:UIControlStateNormal];
+//    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+    
+    CustomView * view = [[CustomView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:view];
+    [view addSubview:btn];
+    
+    
+//    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickView)];
+//    [self.view addGestureRecognizer:tap];
+}
+- (void)clickView{
+    NSLog(@"点击VC的view...");
+}
+- (void)clickBtn{
+    NSLog(@"点击按钮...");
+//    UIWindow * w = [[[UIApplication sharedApplication] windows] firstObject];
+//    [self logSubviewsOfView:w];
+}
+- (void)logSubviewsOfView:(UIView *)view{
+    if (view.subviews.count > 0) {
+        NSLog(@"%@", view.subviews);
+        for (UIView * v in view.subviews) {
+            [self logSubviewsOfView:v];
+        }
+    }else{
+        return;
+    }
+   
 }
 
 // 测试layoutsubviews方法
@@ -53,6 +98,8 @@
     self.view = view;
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    NSLog(@"%s", __func__);
     [self presentNextVC];
     
 //    [self deadLoop];
@@ -66,6 +113,40 @@
 //    [self testReverseList];
     
 //    [self testViewModel];
+    
+//    [self testTaggedPointer];
+    
+//    [self testAutorelease];
+}
+
+// 测试autorelease
+- (void)testAutorelease{
+//    @autoreleasepool {
+//        NextViewController * nextC = [[[NextViewController alloc] init] release];
+//    }
+//
+//    NextViewController * nextC = [[[NextViewController alloc] init] release];
+}
+
+// 测试tagged pointer
+- (void)testTaggedPointer{
+    NSString * str1 = [NSString stringWithFormat:@"111"];
+    NSString * str2 = [NSString stringWithFormat:@"111abcdefg"];
+    NSLog(@"%p %p", str1, str2);
+    NSLog(@"%@ %@", [str1 class], [str2 class]);
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    for (NSInteger i = 0; i < 1000; i ++) {
+        dispatch_async(queue, ^{
+            self.string = [NSString stringWithFormat:@"111"];
+        });
+    }
+    
+    for (NSInteger i = 0; i < 1000; i ++) {
+        dispatch_async(queue, ^{
+            self.string = [NSString stringWithFormat:@"111abcdefg"];
+        });
+    }
 }
 
 // 测试ViewModel

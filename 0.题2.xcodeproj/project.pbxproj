@@ -46,6 +46,8 @@
 		C11ECD4224431F92007D0B74 /* TestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C11ECD3F24431F92007D0B74 /* TestViewModel.m */; };
 		C11ECD4324431F92007D0B74 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C11ECD4024431F92007D0B74 /* TestModel.m */; };
 		C11ECD4424431F92007D0B74 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = C11ECD4124431F92007D0B74 /* TestView.m */; };
+		C181246024A8DF4A00E20FC6 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C181245F24A8DF4A00E20FC6 /* CustomButton.m */; };
+		C181246324A8DFF300E20FC6 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C181246224A8DFF300E20FC6 /* CustomView.m */; };
 		C1B042782450837F00ABC178 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B042762450837F00ABC178 /* ThirdViewController.m */; };
 		C1B042792450837F00ABC178 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1B042772450837F00ABC178 /* ThirdViewController.xib */; };
 		C4DE4DA017FC80F324B52C0E /* libPods-0.题2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DC4285B4B5322EFDB6D42E /* libPods-0.题2.a */; };
@@ -153,6 +155,10 @@
 		C11ECD3F24431F92007D0B74 /* TestViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewModel.m; sourceTree = "<group>"; };
 		C11ECD4024431F92007D0B74 /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
 		C11ECD4124431F92007D0B74 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+		C181245E24A8DF4A00E20FC6 /* CustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
+		C181245F24A8DF4A00E20FC6 /* CustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		C181246124A8DFF300E20FC6 /* CustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		C181246224A8DFF300E20FC6 /* CustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 		C1B042752450837F00ABC178 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		C1B042762450837F00ABC178 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		C1B042772450837F00ABC178 /* ThirdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
@@ -230,6 +236,10 @@
 				A27C215A243C218B007444F4 /* SceneDelegate.m */,
 				A27C215C243C218B007444F4 /* ViewController.h */,
 				A27C215D243C218B007444F4 /* ViewController.m */,
+				C181245E24A8DF4A00E20FC6 /* CustomButton.h */,
+				C181245F24A8DF4A00E20FC6 /* CustomButton.m */,
+				C181246124A8DFF300E20FC6 /* CustomView.h */,
+				C181246224A8DFF300E20FC6 /* CustomView.m */,
 				A2229095243F2A3A00A52806 /* ReverseList.h */,
 				A2229096243F2A3A00A52806 /* ReverseList.m */,
 				A27C21BA243C2C1E007444F4 /* NextViewController.h */,
@@ -551,11 +561,13 @@
 				A2AED462243DBBB400F9A9BB /* MJPropertyType.m in Sources */,
 				A27C21AC243C245D007444F4 /* MASConstraintMaker.m in Sources */,
 				A27C21B0243C245D007444F4 /* MASConstraint.m in Sources */,
+				C181246324A8DFF300E20FC6 /* CustomView.m in Sources */,
 				A2AED466243DBBB400F9A9BB /* MJExtensionConst.m in Sources */,
 				A2AED464243DBBB400F9A9BB /* MJProperty.m in Sources */,
 				A27C21BF243C2CA4007444F4 /* CustomTableViewCell.m in Sources */,
 				A27C21A9243C245D007444F4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				A27C21AD243C245D007444F4 /* MASLayoutConstraint.m in Sources */,
+				C181246024A8DF4A00E20FC6 /* CustomButton.m in Sources */,
 				A2AED468243DBBB400F9A9BB /* NSObject+MJClass.m in Sources */,
 				A2229097243F2A3A00A52806 /* ReverseList.m in Sources */,
 				A27C215B243C218B007444F4 /* SceneDelegate.m in Sources */,
@@ -731,6 +743,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8ETH5Y5NB;
 				INFOPLIST_FILE = "0.题2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -749,6 +762,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8ETH5Y5NB;
 				INFOPLIST_FILE = "0.题2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

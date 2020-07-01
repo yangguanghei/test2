@@ -60,10 +60,21 @@
     if (self.dismissBlock) {
         self.dismissBlock();
     }
+    
+    __weak id weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        __strong id strongSelf = weakSelf;
+        NSLog(@"4秒之后调用：%@", strongSelf);
+        NSLog(@"秒之后调用：%@", [self testStrong]);
+        [strongSelf testStrong];
+    });
+}
+- (void)testStrong{
+    NSLog(@"测试strong...");
 }
 
 - (void)dealloc{
-    NSLog(@"%s", __func__);
+    NSLog(@"销毁了...%s", __func__);
 }
 
 @end
