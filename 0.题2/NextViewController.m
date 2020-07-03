@@ -11,6 +11,8 @@
 #import "CustomTableViewCell.h"
 #import "Masonry.h"
 
+#import "ThirdViewController.h"
+
 @interface NextViewController ()
 
 @property (nonatomic, assign) NSInteger  count;
@@ -44,6 +46,8 @@
             [self.tableView reloadData];
         });
     });
+    
+    [self presentViewController:[ThirdViewController new] animated:YES completion:nil];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.count;
@@ -65,7 +69,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         __strong id strongSelf = weakSelf;
         NSLog(@"4秒之后调用：%@", strongSelf);
-        NSLog(@"秒之后调用：%@", [self testStrong]);
+//        NSLog(@"秒之后调用：%@", self);
         [strongSelf testStrong];
     });
 }

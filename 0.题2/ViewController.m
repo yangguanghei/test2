@@ -65,6 +65,22 @@
     
 //    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickView)];
 //    [self.view addGestureRecognizer:tap];
+    
+    
+    // 测试GCD
+    dispatch_queue_t queue1 = dispatch_queue_create("1", NULL);
+    dispatch_queue_t queue2 = dispatch_queue_create("2", NULL);
+    
+    dispatch_sync(queue1, ^{
+        NSLog(@"1");
+        NSLog(@"%@", [NSThread currentThread]);
+        dispatch_sync(queue2, ^{
+            NSLog(@"2");
+            NSLog(@"%@", [NSThread currentThread]);
+        });
+        NSLog(@"3");
+    });
+    NSLog(@"4");
 }
 - (void)clickView{
     NSLog(@"点击VC的view...");
