@@ -116,7 +116,7 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     NSLog(@"%s", __func__);
-    [self presentNextVC];
+//    [self presentNextVC];
     
 //    [self deadLoop];
     
@@ -133,6 +133,33 @@
 //    [self testTaggedPointer];
     
 //    [self testAutorelease];
+    
+    [self testConst];
+}
+
+- (void)testConst{
+    // const常量
+    
+//    const int a = 1;
+//    a = 2;
+    
+    
+//    const NSString * b = @"1";
+//    b = @"2";
+    
+    
+//    NSString * const c = @"1";
+//    c = @"2";
+    
+//    const TestViewModel * vm = [TestViewModel new];
+//    vm = [TestViewModel new];
+    
+    TestViewModel * const vm = [TestViewModel new];
+//    vm = [TestViewModel new];
+    vm.titleName = @"1";
+}
+- (void)testConstWithConst:(NSString * const)name{
+//    name = @"2";
 }
 
 // 测试autorelease
